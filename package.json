@@ -1,0 +1,58 @@
+{
+  "name": "cold-studios-development-server-launcher",
+  "version": "1.0.0",
+  "description": "The Official Launcher for Cold Studios Development Servers || FiveM || Made By CharleyJ (Coldalliance)",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "Colds Development Studio | Launcher",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "Colds Development Studio | Launcher Uninstaller",
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": false
+    },
+    "extraResources": [
+      {
+        "from": "node_modules/regedit/vbs",
+        "to": "regedit/vbs",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coldalliance/FiveM-Custom-Launcher.git"
+  },
+  "author": "Coldalliance",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coldalliance/FiveM-Custom-Launcher/issues"
+  },
+  "homepage": "https://github.com/Coldalliance/FiveM-Custom-Launcher#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "find-process": "^1.4.7",
+    "fs": "^0.0.1-security",
+    "node-powershell": "^4.0.0",
+    "regedit": "^5.1.1"
+  },
+  "devDependencies": {
+    "electron": "^20.1.1",
+    "electron-builder": "^23.6.0"
+  }
+}
